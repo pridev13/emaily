@@ -4,8 +4,7 @@ class Header extends Component {
 	render() {
 		return (
 			<nav>
-				<div class="nav-wrapper">
-
+				<div className="nav-wrapper">
 					<a href="#" className="brand-logo left">
 						Emaily
 					</a>
@@ -15,7 +14,6 @@ class Header extends Component {
 							<a>Login with Google</a>
 						</li>
 					</ul>
-
 				</div>
 			</nav>
 		);
