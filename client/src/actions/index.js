@@ -16,3 +16,7 @@ export const handleToken = (token) => async (disp) => {
 		payload: res.data
 	});
 };
+
+export const submitSurvey = (values) => {
+	return {type: 'submit_survey'};
+};
