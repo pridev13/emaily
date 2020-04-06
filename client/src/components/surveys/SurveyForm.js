@@ -51,8 +51,8 @@ function validate(values) {
 		}
 	});
 
-	if (!errors.emails) {
-		errors.emails = validateEmails(values.emails);
+	if (!errors.recipients) {
+		errors.recipients = validateEmails(values.recipients);
 	}
 
 	return errors;
