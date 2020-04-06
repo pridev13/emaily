@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import {reduxForm, Field} from 'redux-form';
 import SurveyField from './SurveyField';
 
@@ -15,7 +16,7 @@ class SurveyForm extends Component {
 		return _.map(FIELDS, (field) => {
 			return (
 				<Field
-          key={field.name}
+					key={field.name}
 					type="text"
 					name={field.name}
 					label={field.label}
@@ -32,7 +33,14 @@ class SurveyForm extends Component {
 					onSubmit={this.props.handleSubmit((values) => console.log(values))}
 				>
 					{this.renderFields()}
-					<button type="submit">Submit</button>
+					<Link to="/surveys" className="red btn-flat white-text left">
+						Cancel
+						<i className="material-icons right">cancel</i>
+					</Link>
+					<button className="teal btn-flat right white-text" type="submit">
+						Done
+						<i className="material-icons right">done</i>
+					</button>
 				</form>
 			</div>
 		);
