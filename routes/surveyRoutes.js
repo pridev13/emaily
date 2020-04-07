@@ -48,6 +48,14 @@ module.exports = (app) => {
 		res.send({});
 	});
 
+	app.get('/api/surveys', requireLogin, async (req, res) => {
+		const surveys = await Survey.find({
+			_user: req.user.id,
+		}).select('-recipients');
+
+		res.send(surveys);
+	});
+
 	app.post('/api/surveys', requireLogin, creditCheck, async (req, res) => {
 		const {title, body, subject, recipients} = req.body;
 
